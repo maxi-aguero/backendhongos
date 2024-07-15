@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link rel="stylesheet" href="./css/estiloregistro.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+
+	
+</head>
+<body>
+
+	
+	
+	<div class = "container">
+		<div class="form-content">
+
+				
+				<h2 id="title">Iniciar Sesion</h2>
+				<form th:action="@{/login}" method="post">					
+					
+					
+					<div class = "form-group">
+						<i class="fa-solid fa-envelope" ></i>Email 
+						<input type="text" id ="username" name = "username" placeholder="Email" autofocus="autofocus">
+					</div>
+					
+					<div class="form-group">
+						<i class="fa-solid fa-key fa-fw"></i>Password
+						<input type="password"id="password" name="password" placeholder="Password" />
+					</div>
+					
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<input class= "btn-submit" type="submit" name="login-submit" id="login-submit"
+									 value="Sign In" />
+							</div>
+						</div>
+					</div>
+				</form>
+
+				<div class="form-group">
+						<span class="ir-a-link">Nuevo usuario? <a href="/" th:href="@{/newuser}">Registrar 
+							aqui</a></span>
+				</div>
+
+				<!-- error message -->
+				<div th:if="${param.error}">     
+
+					<div class="alert alert-danger">Invalid username or password.</div>
+				</div>
+			
+				<!-- logout message -->
+				<div th:if="${param.logout}">
+					<div class="alert alert-info">You have been logged out.</div>
+				</div>
+
+				<div th:if="${atributosuccess}">
+					<p class="alert alert-success" th:text="${atributosuccess}"></p>
+				</div>
+				
+			
+
+	</div>
+</body>
+</html>

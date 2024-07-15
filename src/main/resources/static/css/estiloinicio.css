@@ -1,0 +1,158 @@
+body {
+    background-color: #f8f9fa; /* Color de fondo claro */
+}
+
+header {
+    margin-bottom: 50px;
+}
+  
+footer {
+    background-color: #343a40; /*Color oscuro para el pie de página */
+    color: white;
+    padding: 20px 0;
+}
+  
+footer p {
+    margin-bottom: 0;
+}
+
+nav{
+    height: 70px;
+}
+  
+.nav-bar{
+    background-color: #343a40;
+    padding: 0 20px;
+    line-height: 70px;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+  
+.brand a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul{
+    list-style: none;
+}
+  
+.nav-list{
+    background-color: #343a40;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+nav ul li a{
+    display:block;
+    padding: 0 20px;
+    line-height: 70px;
+    background: #343a40;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover{
+    background: #2ab1ce;
+    color: #fff;
+}
+
+nav ul li ul li {
+    min-width: 190px;
+}
+
+nav ul li ul li a{
+    padding: 15px;
+    line-height: 20px;
+}
+
+.navbar-toggler{
+    display: block;
+}
+
+@media (min-width: 768px){
+    #btncolapse{
+        display: none;
+    }
+
+    #listamenu{
+        display: block;
+    }
+}
+
+@media (max-width: 768px){
+    .nav-container{
+        display: inline-block;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .nav-list{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        position: absolute;
+        left:0;
+        z-index: 1000;
+    }
+
+    #btncolapse{
+        display: block;
+        cursor: pointer; 
+        width: 30px; 
+        height: 30px;
+    }
+
+    .navbar-toggler {
+        display: inline-block;
+        justify-content: flex-end;
+    }
+}
+#login-section .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+#login-section .card-header {
+    background-color: #2ab1ce; /* Usando el mismo color que en los enlaces hover */
+}
+
+#login-section .form-control {
+    border-radius: 0;
+}
+
+#login-section .btn-primary {
+    background-color: #2ab1ce;
+    border-color: #2ab1ce;
+}
+
+#login-section .btn-primary:hover {
+    background-color: #1f8fa1;
+    border-color: #1f8fa1;
+}
+
+.table-container {
+    max-height: 200px; /* Altura ajustada para mostrar solo 4 filas */
+    overflow-y: auto; /* Scroll vertical */
+    overflow-x: auto; /* Scroll horizontal */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+thead {
+    position: sticky;
+    top: 0;
+    background-color: #f1f1f1;
+}

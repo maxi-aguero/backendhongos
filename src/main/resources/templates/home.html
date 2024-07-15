@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo de los Hongos</title>
+    <script src="https://kit.fontawesome.com/34242d1290.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{./css/estiloinicio.css}">
+
+
+</head>
+<body>
+    <!-- Encabezado -->
+    <div class="nav-bar">
+        <div class="nav-container">
+            <div class="brand">
+                <a class="navbar-brand" href="#">
+                    <i class="fa-solid fa-earth" alt="logo del sitio Mundo de los Hongos"></i>
+                    <span>Mundo de los Hongos</span>
+                </a>
+            </div>          
+            <p>
+                <a id="btncolapse" class="btn btn-light" data-toggle="collapse" href="#listamenu" role="button" aria-expanded="true" aria-controls="listamenu">☰</a>
+            </p>            
+            <div id="listamenu">
+                <nav>
+                    <ul class="nav-list">
+                        <li><a th:href="@{/}">Inicio</a></li>
+                     <li>   <a th:href="@{/logout}" onclick="return confirm('¿Estás seguro que deseas cerrar sesión?')">Cerrar sesión</a>
+                    </li>   
+                    
+                    <li>   <a th:href="@{/pro}">Cambiar a Pro</a>
+                    </li>                
+                        <li><a href="#footer-contacto">Acerca de</a></li>
+                        <li><a th:href="@{/contactos}">Contactos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    <!-- Contenedor de Lista de Hongos -->
+        <h1>Lista de Hongos</h1>
+        
+        <a th:href="@{'/posteo'}" class="btn btn-success mb-3">Agregar Nuevo Hongo</a>
+              
+                <div th:if="${msg}">   
+					<div class="alert alert-success"th:text="${msg}"></div>
+				</div>
+        
+
+
+    
+
+ 
+        <div class="table-container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>¿Es comestible?</th>
+                        <th>Usuario</th>  
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="hongo : ${hongos}">
+                        <td th:text="${hongo.id}"></td>
+                        <td th:text="${hongo.nombre}"></td>
+                        <td th:text="${hongo.descripcion}"></td>
+                        <td th:text="${hongo.escomestible}"></td>
+                        <td th:text="${hongo.em}"></td>
+                        <td>
+                            <a th:href="@{'/update' + ${hongo.id}}" class="btn btn-warning">Editar</a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/delete/' + ${hongo.id}}" class="btn btn-danger" conclick="return confirm('¿Estás seguro que deseas Eliminar?')">Eliminar</a>
+
+                        </td>
+                                                
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    <!-- Contenedor Principal (Contenido) -->
+    <div id="container-home" class="container mt-5">
+        <!-- Contenido -->
+        <div class="row">
+            <div class="col-md-6 bg-dark text-white">
+                <h2>El Mundo de los Hongos</h2>
+                <p>¡Bienvenido al fascinante mundo de los hongos! Descubre su diversidad, sus misterios y su importancia en la naturaleza. 
+                    Aquí encontrarás información sobre hongos tóxicos, comestibles, medicinales y mucho más. Sumérgete en este viaje único y fascinante.</p>
+                <p></p>
+
+                <h4>¿Qué es un hongo?</h4>
+                <p>Los hongos son un grupo único de seres vivos, con reino propio: el reino Fungi. Comparten características con las plantas y con los animales, 
+                    pero a la vez son muy diferentes a todos. Poseen pared celular y son sésiles (no se desplazan), como las plantas, pero no fotosintetizan sino 
+                    que son heterótrofos, como los animales. En el mundo se conocen unas 70.000 especies de hongos distintas pero podrían existir más de un millón 
+                    y medio. Todavía hay mucho por descubrir. 
+                    Los hongos son diversos y también lo es la forma en que se relacionan con el medio y obtienen su alimento. Hay hongos saprófitos, que se 
+                    alimentan de materia orgánica muerta como hojarasca, estiércol, o madera. Los hay parásitos, que se alimentan de otros organismos, tanto plantas
+                    como animales y también hay hongos que establecen relaciones simbióticas o mutualistas con otros seres vivos.</p>
+
+                <h4>Los hongos y las plantas</h4>
+                <p>La mayoría de las plantas viven en asociación con hongos, que las protegen y nutren: las micorrizas y los hongos endofíticos. Los hongos que 
+                    causan enfermedades en las plantas –es decir, que resultan perjudiciales al parasitarlas- sólo son unas pocas especies.
+
+                    Las micorrizas son hongos que viven en las raíces del 95% de las especies vegetales (incluidas todas las plantas vasculares). Obtienen 
+                    nutrientes de las raíces y a su vez les facilitan la absorción a la planta de elementos esenciales como el nitrógeno y el fósforo. 
+                    La presencia de micorrizas, además, hace que las raíces resistan mejor las situaciones de stress hídrico y que la planta tenga energía extra 
+                    para el rebrote si sufre algún tipo de daño.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col">
+                        <img src="https://cdn.pixabay.com/photo/2017/10/04/21/36/fly-agaric-2817723_1280.jpg" class="img-fluid" alt="Hongos Tóxicos">
+                        <a th:href="@{/venenosos-api}" class="btn btn-primary btn-block mt-3">Hongos Tóxicos</a>
+
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <img src="https://cdn.pixabay.com/photo/2024/03/07/10/30/mushrooms-8618283_1280.jpg" class="img-fluid" alt="Hongos Comestibles">
+                        <a th:href="@{/comestible-api}" class="btn btn-primary btn-block mt-3">Hongos Comestibles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer-contacto" class="mt-5 text-center">
+        <!-- Pie de página aquí -->
+        <p>Equipo 15 - Comisión 24109 - Codo A Codo</p>
+        <p>Maximiliano Aguero</p>
+        <p>Franco Olivera</p>
+        <p>Maribel Palacios</p>
+        <p>Ariel Nicosia</p>
+        <p>Tobias Causevic</p>
+        <p>Mauro Andres Ferra</p>
+        <p>Contacto: info@mundo-hongos.com</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

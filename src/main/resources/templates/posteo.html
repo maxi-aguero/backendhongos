@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/estiloregistro.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace a la biblioteca de Material Design -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <title>Formulario de Carga</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="form-content">
+            <h2 id="title">Postea un nuevo hongo</h2>
+            <form th:action="@{/addhongo}" method="post" th:object="${hongo}" onsubmit="return validarFormulario()">
+                <div class="form-group">
+                    <label for="descripcion">Ingrese el nombre del hongo y su descripción.</label>
+                    <div class="textarea-container" style="border: 2px solid #FFD700; border-radius: 8px; padding: 10px;">
+                        <div class="textarea-title">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre" th:field="*{nombre}"autofocus="autofocus" required >
+                        </div>
+                        <textarea id="descripcion" name="descripcion" rows="4" cols="30" style="width: 100%; resize: none;" placeholder="Descripcion"  th:field="*{descripcion}" required></textarea>
+                        <div class="textarea-footer" style="border-top: 1px solid #BDBDBD; padding-top: 8px;"> 
+                            <p>Usuario: <span th:text="${miusername}"></span> </p>
+
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    Selecciona una opción:
+                    <div>
+                        <label>
+                            <input id="opcion1" name="opcion" type="radio" value="SI"  />
+                            <span>Comestible</span>
+                        </label>
+                      
+                        <label>
+                            <input id="opcion2" name="opcion" type="radio" value="NO" />
+                            <span>No comestible</span>
+                        </label>
+                    </div>
+                </div>
+
+            
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input class="btn-submit" type="submit" name="register-submit" id="register-submit" value="Agregar nuevo Hongo" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+
+            <div class="form-group">
+                <span class="ir-a-link">Volver a <a th:href="@{'/'}">Home</a></span><br>
+            </div>
+
+            
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        function validarFormulario() {
+            var opcion1Seleccionada = document.getElementById('opcion1').checked;
+            var opcion2Seleccionada = document.getElementById('opcion2').checked;
+            if (!opcion1Seleccionada && !opcion2Seleccionada) {
+                alert("Debes seleccionar una opción.");
+                return false;
+            }
+    
+            return true; 
+        }
+    </script>
+</body>
+</html>

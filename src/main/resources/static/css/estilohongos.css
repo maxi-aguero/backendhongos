@@ -1,0 +1,169 @@
+body {
+    background-color: #f8f9fa; /* Color de fondo claro */
+    margin: 0%;
+  }
+  
+  header {
+    margin-bottom: 50px;
+  }
+  
+  footer {
+    background-color: #343a40; /* Color oscuro para el pie de página */
+    color: white;
+    padding: 20px 0;
+  }
+  
+  footer p {
+    margin-bottom: 0;
+  }
+
+  .card:hover{
+    transform-style: preserve-3d;
+    border-radius:20px ;
+    transform: translateY(-15px);
+    box-shadow: 0 12px  16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img-top {
+    height: 40%; 
+    
+   }
+
+   .textsangria{
+      text-indent: 12px;
+   }
+
+    
+  .card-body {
+    overflow-y:auto;
+  }
+
+
+  nav{
+    height: 70px;
+  }
+  
+  .nav-bar{
+    background-color: #343a40;
+    padding: 0 20px;
+    line-height: 70px;
+  }
+
+  .nav-container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+  }
+  
+  .brand a{
+  text-decoration: none;
+  color: white;
+  }
+
+  nav ul{
+  list-style: none;
+  }
+  
+  .nav-list{
+    background-color: #343a40;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+  }
+
+  nav ul li a{
+  display:block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #343a40;
+  text-decoration: none;
+  color: #fff;
+  }
+
+  nav ul li a:hover{
+  background: #2ab1ce;
+  color: #fff;
+}
+
+
+
+nav ul li ul li {
+  min-width: 190px;
+}
+
+nav ul li ul li a{
+  padding: 15px;
+  line-height: 20px;
+}
+
+.navbar-toggler{
+  display: block;
+    
+} 
+
+
+@media (min-width: 768px){
+  #btncolapse{
+    display: none;
+  }
+
+  #listamenu{
+    display: block;
+  }
+
+}
+
+
+
+@media (max-width: 768px){
+  .nav-container{
+    display: inline-block;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+  }
+
+
+  .nav-list{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    position: absolute;
+    left:0;
+    z-index: 1000;
+
+  }
+  
+  #btncolapse{
+    display: block;
+    cursor: pointer; 
+    width: 30px; 
+    height: 30px;
+  }
+
+  
+  .navbar-toggler {
+  display: inline-block;
+  justify-content: flex-end;
+   }
+
+
+
+}
+
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Asegura que la imagen se recorte para cubrir completamente el contenedor */
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Asegura que la imagen se recorte para cubrir completamente el contenedor */
+}
+
+

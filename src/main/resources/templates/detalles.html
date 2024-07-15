@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Hongo</title>
+    <link rel="stylesheet" th:href="@{./css/estilocontacto.css}"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="nav-bar">
+        <div class="nav-container">
+            <div class="brand">
+                <a class="navbar-brand" th:href="@{/}">
+                    <i class="fa-solid fa-earth"alt="logo del sitio Mundo de los Hongos"></i>
+                    <span>Mundo de los Hongos</span>
+                  </a>
+            </div>
+                <p> 
+                    <!--Boton ☰-->
+                   <a id="btncolapse" class="btn btn-light" data-toggle="collapse" href="#listamenu" role="button" aria-expanded="true" aria-controls="collapseExample">☰</a>
+                </p>
+                <div id="listamenu">
+                    <nav>
+                        <ul class="nav-list">
+                            <li><a th:href="@{/}">Inicio</a></li>
+                            <li>   <a th:href="@{/logout}" onclick="return confirm('¿Estás seguro que deseas cerrar sesión?')">Cerrar sesión</a>
+                            </li>   
+                    
+                            <li>   <a th:href="@{/pro}">Cambiar a Pro</a>
+                            </li>                
+                            <li><a href="#footer-contacto">Acerca de</a></li>
+                            <li><a th:href="@{/contactos}">Contactos</a></li>
+                        </ul>
+                    </nav>
+                </div>
+        </div>
+    </div> 
+    
+
+
+    <div class="container mt-5">
+        <h1 id="titulo" class="display-4">Ejemplo de Página</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card">
+                    <img id="imagen" src="" class="card-img-top" alt="Descripción de la imagen">
+                    <div class="card-body">
+                        <p class="card-text">Esta es una descripción de la imagen.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p id="descripcion">Este es el contenido de la página, donde se proporciona información detallada sobre el tema.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script th:src="@{./js/detalles.js}"></script>
+</body>
+</html>

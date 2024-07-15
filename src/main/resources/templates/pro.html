@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/estiloregistro.css">
+    <!-- Enlace a la biblioteca de Material Design -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        .form-content {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>Formulario de Carga</title>
+    
+</head>
+
+ 
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-content">
+                    <h2 id="title">Cambia a usuario Regular</h2>
+
+
+                    <form th:action="@{/comun}" method="post" >
+                        <div class="form-group">
+                            <label for="descripcion">Beneficio de usuario Regular.</label>
+                            <div class="textarea-container" style="border: 2px solid #FFD700; border-radius: 8px; padding: 10px;">
+                                <p>Usuario regular puede agregar un hongo, modificarlo y eliminarlo. No puede modificar y eliminar los de otros usuarios.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <div class="row">
+                                <div style="width: 100%">
+                                    <input class="btn-submit" type="submit" name="register-submit" id="register-submit" value="Ser usuario Regular" style="width: 100%" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
+
+                    <div class="form-group">
+                        <span class="ir-a-link">Volver a <a href="/">Home</a></span><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-content">
+                    <h2 id="title">Cambia a usuario Pro</h2>
+                    <form th:action="@{/cambiapro}" method="post" >
+                        <div class="form-group">
+                            <label for="descripcion">Beneficio de usuario Pro.</label>
+                            <div class="textarea-container" style="border: 2px solid #FFD700; border-radius: 8px; padding: 10px;">
+                                
+                               <p>Usuario Pro puede agregar un hongo,modificarlo y elimimarlo.Puede modifica y eliminar los de otros usuarios.</p>
+
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <div class="row">
+                                <div style="width: 100%">
+                                    <input class="btn-submit" type="submit" name="register-submit" id="register-submit" value="Ser usuario Pro" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group">
+                        <span class="ir-a-link">Volver a <a href="/">Home</a></span><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir el script de Bootstrap al final del cuerpo del documento para mejorar el rendimiento de carga -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

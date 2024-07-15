@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    
+    <link rel="stylesheet" th:href="@{./css/estilocontacto.css}">
+    <script src="https://kit.fontawesome.com/34242d1290.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-container">
+            <div class="brand">
+                <a class="navbar-brand"  th:href="@{/}">
+                    <i class="fa-solid fa-earth"alt="logo del sitio Mundo de los Hongos"></i>
+                    <span>Mundo de los Hongos</span>
+                  </a>
+            </div>
+                <p> 
+                    <!--Boton ☰-->
+                   <a id="btncolapse" class="btn btn-light" data-toggle="collapse" href="#listamenu" role="button" aria-expanded="true" aria-controls="collapseExample">☰</a>
+                </p>
+                <div id="listamenu">
+                    <nav>
+                        <ul class="nav-list">
+                            <li><a  th:href="@{/}">Inicio</a></li>
+                            <li>   <a th:href="@{/logout}" onclick="return confirm('¿Estás seguro que deseas cerrar sesión?')">Cerrar sesión</a>
+                            </li> 
+                            <li>   <a th:href="@{/pro}">Cambiar a Pro</a>
+                            </li>
+                            <li><a href="#footer-contacto">Acerca de</a></li>
+                            <li><a th:href="@{/contactos}">Contactos</a></li>
+                        </ul>
+                    </nav>
+                </div>
+        </div>
+    </div>
+
+    <header>Formulario de contacto</header>
+
+    <form id="form" class="topBefore">
+            
+              <input id="name" type="text" placeholder="Nombre">
+              <input id="email" type="text" placeholder="E-MAIL">
+              <textarea id="message" type="text" placeholder="Mensaje"></textarea>
+      <input id="submit" type="submit" value="Enviar!">
+      
+    </form>
+    
+      <footer id="footer-contacto" class="mt-5 text-center">
+        <!-- Pie de página aquí -->
+        <p>Equipo 15 - Comisión 24109 - Codo A Codo</p>
+        <p>Maximiliano Aguero</p>
+        <p>Franco Olivera</p>
+        <p>Maribel Palacios</p>
+        <p>Ariel Nicosia</p>
+        <p>Tobias Causevic</p>
+        <p>Mauro Andres Ferra</p>
+        <p>Contacto: info@mundo-hongos.com</p>
+      </footer>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+</body>
+</html>

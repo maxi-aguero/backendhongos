@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comestibles</title>
+    <title>Mundo de los Hongos</title>
+    <script src="https://kit.fontawesome.com/34242d1290.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{./css/estilohongos.css}">
+
+
+</head>
+<body>
+
+    <!--Encabezado con un logo de forma de tierra,nombre, boton ☰ y una lista[Inicio-Iniciar Sesion-Registrarse-Acerca de-Contacto]-->
+    <div class="nav-bar">
+      <div class="nav-container">
+        <div class="brand">
+          <a class="navbar-brand" th:href="@{/}">
+            <i class="fa-solid fa-earth" alt="Logo del sitio Mundo de los Hongos"></i><!--Logo-->
+            <span>Mundo de los Hongos</span><!--Nombre-->
+          </a>
+        </div>          
+        <p> 
+          <!--Boton ☰-->
+          <a id="btncolapse" class="btn btn-light" data-toggle="collapse" href="#listamenu" role="button" aria-expanded="true" aria-controls="collapseExample">☰</a>
+        </p>            
+        <!--Lista del menu-->          
+        <div id="listamenu">
+          <nav>
+            <ul class="nav-list">
+              <li><a th:href="@{/}">Inicio</a></li>
+              <li>   <a th:href="@{/logout}" onclick="return confirm('¿Estás seguro que deseas cerrar sesión?')">Cerrar sesión</a>
+              </li> 
+              <li>   <a th:href="@{/pro}">Cambiar a Pro</a>
+              </li>
+              <li><a href="#footer-contacto">Acerca de</a></li>
+              <li><a th:href="@{/contactos}">Contactos</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  
+    <main>
+      <div id="container-home" class="container">
+        <!-- Contenido: tarjetas en filas hasta 5 columnas. 1 columna cuando la ventana se minimiza. -->
+        <div class="row row-cols-1 row-cols-md-5" id="results">
+          <!-- Los resultados de la búsqueda se agregarán aquí -->
+        </div>
+      </div>
+  
+      
+    </main>
+  
+    <footer id="footer-contacto" class="mt-5 text-center">    <!-- Pie de página con texto-->
+      <p>Equipo 15 - Comisión 24109 - Codo A Codo</p>
+      <p>Maximiliano Aguero</p>
+      <p>Franco Olivera</p>
+      <p>Maribel Palacios</p>
+      <p>Ariel Nicosia</p>
+      <p>Tobias Causevic</p>
+      <p>Mauro Andres Ferra</p>
+      <p>Contacto: info@mundo-hongos.com</p>
+    </footer>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script th:src="@{./js/comestible-api.js}"></script>
+
+
+</body>
+  </html>
+  

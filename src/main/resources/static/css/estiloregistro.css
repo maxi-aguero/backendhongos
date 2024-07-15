@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff; /* Blanco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form-content {
+    width: 100%;
+    max-width: 450px;
+    background-color: #0f0fd8; /* Azul */
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 25px;
+  }
+  
+  .form-content h1 {
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #e7eeeb; /* Blanco */
+    position: relative;
+  }
+  
+  .form-content h1::after {
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #0000ff; /* Azul */
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .input-field {
+    background-color: #7c7c8d;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+  }
+  
+  input {
+    width: 100%;
+    background: transparent;
+    border: 2px solid #0000ff;
+    outline: none;
+    padding: 18px 15px;
+    color: #000000; /* Negro */
+    font-weight: bold;
+    border-radius: 3px; 
+  }
+  
+  input::placeholder {
+    margin-left: 15px;
+    color: #c3c4d5; /* Azul pálido */
+    font-weight: normal;
+  }
+  
+  form p {
+    color: #ffffff; /* Blanco */
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
+  form a {
+    color: #138be1; /* Azul */
+    margin-left: 5px;
+    font-weight: bold;
+  }
+  
+  .btn-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn-field button {
+    flex-basis: 48%;
+    font-size: 16px;
+    background-color: #0000ff;
+    color: #ffffff;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+    font-weight: bold;
+  }
+  
+  .input-group {
+    height: 250px;
+  }
+  
+  .btn-field button.disable {
+    background-color: #ffffff;
+    color: #0000ff;
+  }
+  
+  /* Estilo específico para los campos de texto y contraseña */
+  input[type="text"],
+  input[type="password"] {
+    font-family: 'Courier New', Courier, monospace; 
+    background-color: #7c7c8d; /* Color de fondo */
+    border: 2px solid #ccc; 
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
+    width: 100%; 
+    box-sizing: border-box; 
+    color: #000000; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #66afe9; /* Color del borde al enfocar */
+    outline: none; 
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6); /* Sombra externa al enfocar */
+  }
+  
+  input[type="text"]::placeholder,
+  input[type="password"]::placeholder {
+    color: #999;
+    font-style: italic; 
+  }
+  
+  /* Botón "Log In" verde anaranjado con letra negra y bold */
+  .btn-submit {
+    background-color: #ADFF2F; /* Verde anaranjado */
+    color: #000000; /* Letra negra */
+    font-weight: bold; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Efecto al pasar el cursor sobre el botón */
+  .btn-submit:hover {
+    background-color: #9AEC28; 
+  }
+
+   /* Botón "Log In" verde anaranjado con letra negra y bold */
+   .btn-cancelar {
+    background-color: #FF5733; /* Verde anaranjado */
+    color: #000000; /* Letra negra */
+    font-weight: bold; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Efecto al pasar el cursor sobre el botón */
+  .btn-cancelar:hover {
+    background-color: #FF6347; 
+  }
+  
+  /* Estilo del mensaje de error */
+  .alert-danger {
+    color: #ff0000; /* Rojo */
+    background-color: #ffffff; /* Blanco */
+    border: 2px solid #ff0000; /* Borde rojo */
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Estilo del mensaje de logout */
+  .alert-info {
+    color: #ffffff; /* Blanco */
+    background-color: #138be1; /* Azul */
+    border: 2px solid #ffffff; /* Borde blanco */
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Estilo del mensaje de logout */
+  .alert-success {
+    color: #ffffff; /* Blanco */
+    background-color: rgb(10, 180, 10); /* Azul */
+    border: 2px solid #ffffff; /* Borde blanco */
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Estilo para el enlace "Register here" */
+  .ir-a-link {
+    color: #800080; /* Violeta */
+    background-color: #ffffff; /* Blanco */
+    border: 2px solid #800080; /* Borde violeta */
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  /* Efecto al pasar el cursor sobre el enlace "Register here" */
+  .ir-a-link:hover {
+    background-color: #e6e6fa; 
+  }
+  
+  fieldset {
+    border: none; /* Quitamos el borde por defecto del fieldset */
+  }
+   
+  .opciones{
+    display: flex;
+    justify-content: flex-start;
+  }
